@@ -1,6 +1,5 @@
 package deepequal;
 
-import haxe.Int64;
 import haxe.PosInfos;
 import haxe.io.Bytes;
 import haxe.Constraints;
@@ -68,12 +67,12 @@ private class Compare {
 			if(!Std.is(a, String)) return mismatch(e, a);
 			return simple(e, a);
 			
-		} else if(Int64.is(e)) {
-			
-			#if !java
-			if(!Int64.is(a)) return mismatch(e, a);
-			#end
-			return if((e:Int64) == (a:Int64)) Success(Noise) else mismatch(e, a);
+//		} else if(Int64.is(e)) {
+//
+//			#if !java
+//			if(!Int64.is(a)) return mismatch(e, a);
+//			#end
+//			return if((e:Int64) == (a:Int64)) Success(Noise) else mismatch(e, a);
 			
 		} else if(Std.is(e, Float)) {
 			
